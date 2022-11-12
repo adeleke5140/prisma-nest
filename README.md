@@ -41,7 +41,7 @@ model Article{
 }
 ```
 
-# How to run
+## How to run
 
 To run this api locally,
 
