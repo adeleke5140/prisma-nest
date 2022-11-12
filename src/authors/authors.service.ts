@@ -8,7 +8,9 @@ export class AuthorsService {
   constructor(private prisma: PrismaService) {}
 
   create(createAuthorDto: CreateAuthorDto) {
-    return 'This action adds a new author';
+    return this.prisma.author.create({
+      data: createAuthorDto,
+    });
   }
 
   findAll() {
@@ -17,7 +19,9 @@ export class AuthorsService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} author`;
+    return this.prisma.author.findUnique({
+      where: { id },
+    });
   }
 
   update(id: number, updateAuthorDto: UpdateAuthorDto) {
